@@ -1,1 +1,51 @@
-<!doctype html><html><head><meta charset='utf-8'><title>FafecomSite</title></head><body><h1>FafecomSite</h1></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FafecomSite — Gerador Web (rodar no navegador)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>FafecomSite — Gerador de Ícones (rodar no navegador)</h1>
+      <p class="muted">Escolha uma imagem, URL ou clique em <strong>Surpresa</strong> para imagens/ sites aleatórios. Clique no ícone para abrir o site.</p>
+    </header>
+
+    <main>
+      <form id="form" class="controls">
+        <div class="col">
+          <label>Imagem (arquivo): <input id="file" type="file" accept="image/*" /></label>
+          <label>ou URL da imagem: <input id="imageUrl" type="url" placeholder="https://..." /></label>
+        </div>
+
+        <div class="col">
+          <label>Site/App destino (URL): <input id="site" type="url" placeholder="https://example.com" /></label>
+          <label>Nome do selo: <input id="seal" type="text" placeholder="MeuSelo" value="fafecom" /></label>
+        </div>
+
+        <div class="actions">
+          <button id="surprise" type="button">Surpresa (imagem + site aleatório)</button>
+          <button id="generate" type="button">Gerar Ícone</button>
+          <button id="download" type="button" disabled>Baixar PNG</button>
+        </div>
+      </form>
+
+      <section class="preview">
+        <h2>Ícone gerado</h2>
+        <div id="iconWrap" class="icon-wrap">
+          <!-- icone clicável aparecerá aqui -->
+        </div>
+        <canvas id="canvas" width="512" height="512" style="display:none"></canvas>
+      </section>
+    </main>
+
+    <footer>
+      <small>Abra este arquivo em um servidor local (recomendado) ou faça deploy em GitHub Pages/Netlify.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
